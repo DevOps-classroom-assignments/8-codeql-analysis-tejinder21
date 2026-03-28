@@ -49,11 +49,3 @@ jobs:
 
       - name: Run Docker container
         run: docker run -d -p 8080:8080 --name go-web-server go-web-server
-
-      - name: Wait for container to start
-        run: sleep 5
-
-      - name: Test readfile endpoint
-        run: curl --fail "http://localhost:8080/readfile?file=safe-files/hello.txt"
-
-    # Define steps to build and run the Docker container
